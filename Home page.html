@@ -1,106 +1,63 @@
-<DOCTYPE! html>
-    <html>
-        <title>
-            About Myself
-        </title>
-        <body style="background-color:rgb(0, 0, 0);">
-            <style>
-                h1 {font-weight: bold;color: #fff;font-size: 80px;}
-                h2 {font-weight: bold;color: #c5baba;font-size: 30px;}
-                h1 {text-align: center;}
-                p {font-weight: bold;color: #fff;font-size: 15px;}
-                /* p {text-align: right;} */
-                div {text-align: center;}
-                #videoBackground {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures the video covers the full screen */
-            z-index: -1; /* Ensure the video is behind other content */
-        }
-                </style>
-                <br/>
-                <!-- Video background -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home styles.css">
+    <title>About Myself</title>
+</head>
+
+<body>
+
+    <!-- Video Background -->
     <video id="videoBackground" autoplay muted loop>
-        <source src="Pinterest media.mp4" type="video/mp4"> 
+        <source src="d1cc3d9fa074a1f6c12c82eabfbe02d4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
     </video>
-    <video id="videoBackground" autoplay muted loop>
-        <source src="Pinterest media.mp4" type="video/mp4"> 
-    </video>
-            <h1>
-                Welcome to my website
-            </h1>
-            <hr/>
-             
 
-            <img src="https://i.pinimg.com/736x/db/10/a0/db10a07f5b54cf99ba2b5ec31b65696d.jpg" width="200" height="200"/><h2><Strong>John Doe (born March 13, 2007)</Strong>is a 17-year-old fitness enthusiast, aspiring bodybuilder,<br/> 
-                football player, and car enthusiast from Colombo, Sri Lanka.<br/> 
-                Known for his dedication to weightlifting, sports, and overall physical fitness, John has become an inspiration to many young people in Sri Lanka and abroad, balancing his passion for fitness with his love for football and cars.<br/></h2>
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#home"><strong>Home</strong></a>
+        <a href="#about"><strong>About Me</strong></a>
+        <a href="#contact"><strong>Contact</strong></a>
+    </nav>
 
-<h2><Strong>Early Life</Strong></h2>
+    <!-- Main Content Section -->
+    <div class="content">
+        <!-- Home Section -->
+        <section id="home">
+            <h1>Welcome to My Website</h1>
+        </section>
 
-<p>John Doe was born on March 13, 2007, in Colombo, Sri Lanka. Growing up, John was always active and had a natural interest in sports.<br/> 
-He was particularly drawn to football, which he began playing at a young age. He also developed a love for outdoor activities and often spent his free time playing various sports with his friends.<br/>
-In addition to his interest in sports, John had a fascination with cars, especially performance vehicles.<br/>
-His family and friends recall how, even as a child, he was captivated by the mechanics and designs of different car models.<br/> 
-This passion for cars has remained an important part of his life.</p>
+        <!-- Flexbox Container for Left and Right Sections -->
+        <div class="two-column-container">
 
-<h2><Strong>Introduction to Fitness</Strong></h2>
-<p>At the age of 15, John discovered the gym and weightlifting through his older brother, which quickly became a central part of his life.<br/>
-John was inspired by the physical transformation that bodybuilding could offer and began learning about exercise routines, proper nutrition,<br/>
-and recovery strategies. Over time, weightlifting and bodybuilding became his primary focus alongside his passion for football.</p> 
 
-<h2><Strong>Football Career</Strong></h2>
+        <section id="home" class="box diagonal-section">
+            <div class="scrollable-paragraph">
+                <h2><strong>Jaxon Maverick</strong></h2>
+                <br>
+                <p id="about-text">
+                    I’m Jaxon Maverick, a 17-year-old fitness enthusiast, aspiring bodybuilder, football player, and car lover from Colombo, Sri Lanka. My dedication to weightlifting, sports, and overall physical fitness has become a big part of who I am. Over time, I’ve managed to balance my passion for fitness with my love for football and cars, and it’s been incredible to see how it has inspired many young people, not just in Sri Lanka, but from all around the world.
+                    <br>
+                </p>
+            </div>
+        </section>
 
-<p>John has been passionate about football since his childhood and has played for various local teams during his school years.<br/>His speed, agility, and tactical awareness on the field have made him a standout player,<br/> 
-and he continues to actively participate in football matches, both for fun and as part of local leagues.<br/>
-As a midfielder, John is known for his stamina, ball control, and ability to read the game, attributes that he believes are enhanced by his fitness training.<br/>
-John sees football as not just a sport but as an essential part of his overall fitness regimen, helping him improve his cardiovascular health, endurance, and teamwork skills.</p>
+        <!-- Icons container moved outside of the 'about' section -->
+        <div class="icon-container">
+            <a href="facebook" class="icon-link">
+                <img src="15707884.png" alt="Facebook" class="icon-image">Facebook
+            </a>
+            <a href="#football" class="icon-link">
+                <img src="github-6980894_1280.webp" alt="Git Hub" class="icon-image">Git Hub
+            </a>
+            <a href="#cars" class="icon-link">
+                <img src="instagram-mobile-app-logo-instagram-app-icon-ig-app-free-free-vector.jpg" alt="Instagram" class="icon-image">Instagram
+            </a>
+        </div>
 
-<h2><Strong>Fitness Journey</Strong></h2>
+</body>
 
-<p>By the age of 14, John had established a rigorous training routine, working out five days a week with a focus on both strength training and conditioning for football.<br/> 
-His workout regime includes a mix of compound lifts, bodyweight exercises, and cardio, designed to build strength while maintaining the flexibility and agility required for football.<br/> 
-He also makes time for sports-specific training, such as sprint drills and endurance runs.<br/>
-John places a strong emphasis on the importance of nutrition in his fitness journey, ensuring he gets the right balance of macronutrients to fuel both his gym sessions and football performances.<br/>
-He has also learned about the role of supplements, such as protein and creatine, to help with recovery and muscle growth.</p>
-
-<h2><Strong>Passion for Cars</Strong></h2>
-
-<p>
-Alongside his athletic endeavors, John has maintained a deep interest in cars.<br/>
-From a young age, he was fascinated by car models, engine mechanics, and the fast-paced automotive world.<br/>
-John follows international car events and keeps up with the latest car models and technologies.<br/>
-His love for performance cars and motorsport is evident, and he dreams of owning a high-performance car when he's older.<br/>
-John’s interest in cars has even influenced his fitness journey, as he sees the human body as a "machine" that requires proper care, maintenance, and performance optimization—much like the cars he admires.</p>
-
-<h2><Strong>Social Media Presence</Strong></h2>
-John’s passion for fitness, football, and cars has led him to share his journey on social media.<br/>
-He frequently posts about his workout routines, football training sessions, and even shares his insights into cars.<br/>
-His posts often include motivational content, as he aims to inspire others, especially young people in Sri Lanka, to pursue their fitness goals and embrace a healthy lifestyle. His growing following on social media appreciates his ability to balance his diverse passions.
-
-<h2><Strong>Future Goals</Strong></h2>
-<p>
-Looking ahead, John is focused on continuing his fitness journey while pursuing his love for football and cars.<br/>
-He hopes to play at a higher level in football, potentially even representing Sri Lanka in youth leagues or amateur football clubs.<br/>
-He also intends to further his education in fitness and nutrition, possibly pursuing a personal training certification in the future.<br/>
-John also dreams of working in the automotive industry, perhaps in car engineering or marketing, where he can merge his passion for cars with his career ambitions.</p>
-
-<h2><Strong>Personal Life</Strong></h2>
-<p>
-Outside of his gym sessions, football matches, and car-related hobbies,<br/>
-John enjoys spending time with his family and friends. He loves exploring the outdoors,<br/>
-whether it's hiking in Sri Lanka’s scenic hills or enjoying the coastal beauty of the island.<br/>
-John is also a fan of reading, particularly books related to self-development, fitness, and the automotive industry.</p>
-
-<h2><Strong>Legacy</Strong></h2>
-<p>
-Though he is still young, John Doe has already established himself as a rising star in the fitness community and among his peers in Sri Lanka.<br/>
-His ability to balance his love for football, cars, and fitness sets him apart, and he is committed to using his platform to inspire others.<br/>
-With his determination and hard work, John aims to make a lasting impact in the fields of fitness, football, and the automotive world, motivating others to pursue their passions and lead healthier, more fulfilling lives.
-            </p>
-
-        </body>
-    </html>
+</html>
