@@ -1,24 +1,37 @@
-<DOCTYPE! html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in</title>
+    <title>Sign In</title>
+    <style>
+        /* Reset default body margin and padding */
+        body, h1, p, input {
+            margin: 0;
+            padding: 0;
+            font-family: Arial,'Times New Roman', sans-serif;
+        }
 
-<body>
-    <body style="background-color:#000000;">
-        <style>
-            h1 {font-weight: bold;color: #fff;font-size: 80px;}
-            h1 {text-align: center;}
-            p {font-weight: bold;color: #000500;font-size: 20px;}
-            p {text-align: center;}
-            div {text-align: center;}
-            h1 {
+        /* Body styling */
+        body {
+            background-color: #000000; /* Black background */
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+            position: relative;
+            height: 100vh;
+        }
+
+        /* Header styling */
+        h1 {
             font-weight: bold;
+            font-family: 'Times New Roman';
             color: #fff;
             font-size: 80px;
-            text-align: center;
+            margin: 50px 0;
         }
+
+        /* Video background */
         #videoBackground {
             position: absolute;
             top: 0;
@@ -26,110 +39,137 @@
             width: 100%;
             height: 100%;
             object-fit: cover; /* Ensures the video covers the full screen */
-            z-index: -1; /* Ensure the video is behind other content */
+            z-index: -1; /* Keep the video behind the content */
         }
-        p {
-            font-weight: bold;
-            color: #ffffff;
-            font-size: 20px;
-            text-align: center;
+
+        /* Form container */
+        form {
+    background: rgba(181, 184, 181, 0.267); /* White background with slight transparency */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* Green glow effect */
+}
+
+        /* Label and input fields styling */
+        label {
+            display: block;
+            margin: 10px 0 5px;
         }
-        div {
-            text-align: center;
-        }
-        body {
-            background-color: #177581;
-        }
-        input {
+
+        input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
             padding: 10px;
-            margin: 10px;
+            margin: 10px 0;
             width: 250px;
             border-radius: 5px;
             border: 1px solid #ddd;
         }
+
         input[type="submit"] {
             background-color: #4CAF50;
             color: white;
             border: none;
+            padding: 15px;
+            width: 270px;
+            border-radius: 5px;
+            cursor: pointer;
         }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Error messages */
         .error {
             color: red;
             font-size: 14px;
+            margin-top: 5px;
         }
-            </style>
-            </head>
-            <!-- Video background -->
+    </style>
+</head>
+<body>
+
+    <!-- Video Background -->
     <video id="videoBackground" autoplay muted loop>
-        <source src="d1cc3d9fa074a1f6c12c82eabfbe02d4.mp4" type="video/mp4"> 
+        <source src="d1cc3d9fa074a1f6c12c82eabfbe02d4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
     </video>
-    
-            </body>
-    <h1>Sign in</h1>
+
     <br/>
-    <form action="Home page.html">
-        <p>
-            Full Name:<br />
-            <input type="text" placeholder="First name">
-            <input type="text" placeholder="Last name">
-        </p>
-        <p>
-            Your email:<br />
-            <input type="email" placeholder="e.g:something@gmail.com">
-        </p>
-        <p>
-            Password:<br />
-            <input type="password" name="password" placeholder="6-12 characters" maxlength="12" />
-        </p>
-        <p>
-            Repeat Password:<br />
-            <input type="password" name="password" placeholder="Password should match" maxlength="12" />
-        </p>
-        <p>
-            Age:<br />
-            <input type="number" name="age" min="6" max="40" />
-        </p>
-        <p>
+    <h1>Sign In</h1>
+    <br/>
+    <br/>
+    <br/>
+
+    <!-- Sign-in Form -->
+    <form onsubmit="return validateForm()" action="home.html">
+        <div>
+            <label for="firstName">Full Name:</label>
+            <input type="text" id="firstName" placeholder="First name" required>
+            <input type="text" id="lastName" placeholder="Last name" required>
+        </div>
+
+        <div>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" placeholder="e.g: something@gmail.com" required>
+            <div id="emailError" class="error"></div>
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="6-12 characters" maxlength="12" required>
+            <div id="passwordError" class="error"></div>
+        </div>
+
+        <div>
+            <label for="repeatPassword">Repeat Password:</label>
+            <input type="password" id="repeatPassword" placeholder="Password should match" maxlength="12" required>
+            <div id="repeatPasswordError" class="error"></div>
+        </div>
+
+        <div>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="6" max="40" required>
+        </div>
+
+        <div>
             <input type="submit" value="Log in">
-        </p>
-
-        <script>
-            function validateForm() {
-                let isValid = true;
-    
-                // Clear previous errors
-                document.getElementById("emailError").textContent = "";
-                document.getElementById("passwordError").textContent = "";
-                document.getElementById("repeatPasswordError").textContent = "";
-                document.getElementById("ageError").textContent = "";
-    
-                // Email validation
-                const email = document.getElementById("email").value;
-                const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                if (!emailPattern.test(email)) {
-                    document.getElementById("emailError").textContent = "Please enter a valid email.";
-                    isValid = false;
-                }
-    
-                // Password validation
-                const password = document.getElementById("password").value;
-                if (password.length < 6 || password.length > 12) {
-                    document.getElementById("passwordError").textContent = "Password must be between 6 and 12 characters.";
-                    isValid = false;
-                }
-    
-                // Repeat Password validation
-                const repeatPassword = document.getElementById("repeatPassword").value;
-                if (password !== repeatPassword) {
-                    document.getElementById("repeatPasswordError").textContent = "Passwords do not match.";
-                    isValid = false;
-                }
-
-                return isValid; // Prevent form submission if validation fails
-            }
-        </script>
-        
-
-        
+        </div>
     </form>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            // Clear previous errors
+            document.getElementById("emailError").textContent = "";
+            document.getElementById("passwordError").textContent = "";
+            document.getElementById("repeatPasswordError").textContent = "";
+
+            // Email validation
+            const email = document.getElementById("email").value;
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").textContent = "Please enter a valid email.";
+                isValid = false;
+            }
+
+            // Password validation
+            const password = document.getElementById("password").value;
+            if (password.length < 6 || password.length > 12) {
+                document.getElementById("passwordError").textContent = "Password must be between 6 and 12 characters.";
+                isValid = false;
+            }
+
+            // Repeat Password validation
+            const repeatPassword = document.getElementById("repeatPassword").value;
+            if (password !== repeatPassword) {
+                document.getElementById("repeatPasswordError").textContent = "Passwords do not match.";
+                isValid = false;
+            }
+
+            return isValid; // Prevent form submission if validation fails
+        }
+    </script>
 </body>
 </html>
