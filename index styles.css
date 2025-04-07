@@ -1,0 +1,217 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Video Background */
+#videoBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+  z-index: -1;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  background: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 20px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #00ff88;
+}
+
+
+.nav-bar a:hover {
+  color: #00ff88;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: auto;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #00ff88;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  padding: 12px 30px;
+  font-size: 16px;
+  background: #00ff88;
+  color: black;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+}
+
+/* About Section (Glass Effect) */
+.glass-section {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 50px auto;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.glass-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.glass-section p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background: #00ff88;
+  border: none;
+  border-radius: 20px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #00cc66;
+}
+
+/* Profile Image */
+.profile-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-top: 30px;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 255, 136, 0.4);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .glass-section {
+    padding: 20px;
+  }
+
+  .nav-bar ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}
+
+/* Language Switcher */
+.language-switcher {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.language-switcher select {
+  background-color: #00ff88;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.language-switcher select:hover {
+  background-color: #00cc66;
+}

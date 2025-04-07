@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="About styles.css" />
+  <title>About Myself</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    video#videoBackground {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      filter: brightness(0.5);
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffe7;
+    }
+
+    .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .two-column-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .box {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      flex: 1 1 45%;
+      transition: transform 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+    }
+
+    .image-container img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .scrollable-paragraph p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    #read-more-btn {
+      margin-top: 1rem;
+      padding: 0.5rem 1.2rem;
+      font-size: 1rem;
+      border: none;
+      background-color: #00ffe7;
+      color: #000;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #read-more-btn:hover {
+      background-color: #00ccb8;
+    }
+
+    @media (max-width: 768px) {
+      .two-column-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script>
+    function toggleText() {
+      const moreText = document.getElementById("more-text");
+      const btn = document.getElementById("read-more-btn");
+
+      if (moreText.style.display === "none") {
+        moreText.style.display = "inline";
+        btn.textContent = "Read Less";
+      } else {
+        moreText.style.display = "none";
+        btn.textContent = "Read More";
+      }
+    }
+
+    window.onload = () => {
+      document.getElementById("more-text").style.display = "none";
+    };
+  </script>
+</head>
+
+<body>
+  <!-- Background Video -->
+  <video id="videoBackground" autoplay muted loop>
+    <source src="d1cc3d9fa074a1f6c12c82eabfbe02d4.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+ <header class="hero">
+    <nav>
+        <a id="Home" href="index.html"><strong>Home</strong></a>
+        <a id="About me"href="About me.html"><strong>About Me</strong></a>
+        <a id="Contact me"href="contact me.html"><strong>Contact</strong></a>
+        
+    <div class="language-switcher">Language:
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="zh">Mandarin Chinese</option>
+            <option value="es">Spanish</option>
+            <option value="ta">Tamil</option>
+            <option value="ar">Arabic</option>
+        </select>
+    </div>
+    </nav>
+ </header>
+<div class="hero-content">
+    <h1>About <span class="highlight">Me</span></h1>
+</div>
+  <div class="content">
+    
+    <div class="two-column-container">
+      <div class="box scrollable-paragraph">
+        <h2><strong>Jaxon Maverick</strong></h2>
+        <p>
+          I’m Jaxon Maverick, a 17-year-old fitness and coding enthusiast from Colombo, Sri Lanka. My passion for weightlifting and sports has shaped who I am. Recently, I also discovered the world of coding, which excites me because of its blend of logic and creativity.
+          <span id="more-text">
+            <br><br>
+            I’ve been learning Python, JavaScript, and HTML/CSS. I enjoy how a few lines of code can create something powerful — from websites to games. Coding feels like an art form, just like fitness does to me.
+          </span>
+        </p>
+        <button id="read-more-btn" onclick="toggleText()">Read More</button>
+      </div>
+      <div class="box image-container">
+        <img src="magicstudio-art.jpg" alt="Jaxon Maverick" />
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 Jaxon Maverick. All Rights Reserved.</p>
+</footer>
+</body>
+
+</html>
