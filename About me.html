@@ -1,6 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -120,16 +119,98 @@
 
       if (moreText.style.display === "none") {
         moreText.style.display = "inline";
-        btn.textContent = "Read Less";
+        btn.textContent = translations[document.getElementById("languageSelect").value].readLess;
       } else {
         moreText.style.display = "none";
-        btn.textContent = "Read More";
+        btn.textContent = translations[document.getElementById("languageSelect").value].readMore;
       }
     }
 
     window.onload = () => {
       document.getElementById("more-text").style.display = "none";
     };
+
+    const translations = {
+      en: {
+        navHome: "Home",
+        navAbout: "About Me",
+        navContact: "Contact",
+        heading: "About <span class='highlight'>Me</span>",
+        name: "Jaxon Maverick",
+        bioPart1: "I’m Jaxon Maverick, a 17-year-old fitness and coding enthusiast from Colombo, Sri Lanka...",
+        moreText: "I’ve been learning Python, JavaScript, and HTML/CSS...",
+        readMore: "Read More",
+        readLess: "Read Less",
+        footer: "&copy; 2025 Jaxon Maverick. All Rights Reserved."
+      },
+      zh: {
+        navHome: "主页",
+        navAbout: "关于我",
+        navContact: "联系我",
+        heading: "关于<span class='highlight'>我</span>",
+        name: "贾克森·马弗里克",
+        bioPart1: "我叫贾克森·马弗里克，来自斯里兰卡科伦坡，是一名17岁的健身和编程爱好者...",
+        moreText: "我正在学习Python、JavaScript和HTML/CSS...",
+        readMore: "阅读更多",
+        readLess: "收起",
+        footer: "&copy; 2025 贾克森·马弗里克。保留所有权利。"
+      },
+      es: {
+        navHome: "Inicio",
+        navAbout: "Sobre mí",
+        navContact: "Contacto",
+        heading: "Sobre <span class='highlight'>mí</span>",
+        name: "Jaxon Maverick",
+        bioPart1: "Soy Jaxon Maverick, un entusiasta del fitness y la programación de 17 años...",
+        moreText: "He estado aprendiendo Python, JavaScript y HTML/CSS...",
+        readMore: "Leer más",
+        readLess: "Leer menos",
+        footer: "&copy; 2025 Jaxon Maverick. Todos los derechos reservados."
+      },
+      ta: {
+        navHome: "முகப்பு",
+        navAbout: "என்னை பற்றி",
+        navContact: "தொடர்பு கொள்ள",
+        heading: "<span class='highlight'>என்னை</span> பற்றி",
+        name: "ஜாக்சன் மேவரிக்",
+        bioPart1: "நான் ஜாக்சன் மேவரிக். இலங்கையின் கொழும்பில் இருந்து வந்த...",
+        moreText: "நான் Python, JavaScript மற்றும் HTML/CSS கற்றுக்கொண்டு வருகிறேன்...",
+        readMore: "மேலும் படிக்க",
+        readLess: "குறைக்க",
+        footer: "&copy; 2025 ஜாக்சன் மேவரிக். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
+      },
+      ar: {
+        navHome: "الرئيسية",
+        navAbout: "عنّي",
+        navContact: "اتصل بي",
+        heading: "عن <span class='highlight'>نفسي</span>",
+        name: "جاكسون مافريك",
+        bioPart1: "أنا جاكسون مافريك، شاب يبلغ من العمر 17 عامًا من كولومبو...",
+        moreText: "أتعلم حاليًا Python وJavaScript وHTML/CSS...",
+        readMore: "اقرأ المزيد",
+        readLess: "اقرأ أقل",
+        footer: "&copy; 2025 جاكسون مافريك. جميع الحقوق محفوظة."
+      }
+    };
+
+    function changeLanguage() {
+      const lang = document.getElementById("languageSelect").value;
+      const t = translations[lang];
+
+      document.getElementById("nav-home").textContent = t.navHome;
+      document.getElementById("nav-about").textContent = t.navAbout;
+      document.getElementById("nav-contact").textContent = t.navContact;
+
+      document.getElementById("about-heading").innerHTML = t.heading;
+      document.getElementById("name").textContent = t.name;
+      document.getElementById("bio-part1").textContent = t.bioPart1;
+      document.getElementById("more-text").innerHTML = "<br><br>" + t.moreText;
+
+      const btn = document.getElementById("read-more-btn");
+      btn.textContent = document.getElementById("more-text").style.display === "none" ? t.readMore : t.readLess;
+
+      document.getElementById("footer-text").innerHTML = t.footer;
+    }
   </script>
 </head>
 
@@ -139,33 +220,36 @@
     <source src="d1cc3d9fa074a1f6c12c82eabfbe02d4.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
- <header class="hero">
+
+  <header class="hero">
     <nav>
-        <a id="Home" href="index.html"><strong>Home</strong></a>
-        <a id="About me"href="About me.html"><strong>About Me</strong></a>
-        <a id="Contact me"href="contact me.html"><strong>Contact</strong></a>
-        
-    <div class="language-switcher">Language:
+      <a id="nav-home" href="index.html"><strong>Home</strong></a>
+      <a id="nav-about" href="About me.html"><strong>About Me</strong></a>
+      <a id="nav-contact" href="contact me.html"><strong>Contact</strong></a>
+      <div class="language-switcher">Language:
         <select id="languageSelect" onchange="changeLanguage()">
-            <option value="en">English</option>
-            <option value="zh">Mandarin Chinese</option>
-            <option value="es">Spanish</option>
-            <option value="ta">Tamil</option>
-            <option value="ar">Arabic</option>
+          <option value="en">English</option>
+          <option value="zh">Mandarin Chinese</option>
+          <option value="es">Spanish</option>
+          <option value="ta">Tamil</option>
+          <option value="ar">Arabic</option>
         </select>
-    </div>
+      </div>
     </nav>
- </header>
-<div class="hero-content">
-    <h1>About <span class="highlight">Me</span></h1>
-</div>
+  </header>
+
+  <div class="hero-content">
+    <h1><span id="about-heading">About <span class="highlight">Me</span></span></h1>
+  </div>
+
   <div class="content">
-    
     <div class="two-column-container">
       <div class="box scrollable-paragraph">
-        <h2><strong>Jaxon Maverick</strong></h2>
+        <h2 id="name"><strong>Jaxon Maverick</strong></h2>
         <p>
-          I’m Jaxon Maverick, a 17-year-old fitness and coding enthusiast from Colombo, Sri Lanka. My passion for weightlifting and sports has shaped who I am. Recently, I also discovered the world of coding, which excites me because of its blend of logic and creativity.
+          <span id="bio-part1">
+            I’m Jaxon Maverick, a 17-year-old fitness and coding enthusiast from Colombo, Sri Lanka. My passion for weightlifting and sports has shaped who I am. Recently, I also discovered the world of coding, which excites me because of its blend of logic and creativity.
+          </span>
           <span id="more-text">
             <br><br>
             I’ve been learning Python, JavaScript, and HTML/CSS. I enjoy how a few lines of code can create something powerful — from websites to games. Coding feels like an art form, just like fitness does to me.
@@ -178,9 +262,9 @@
       </div>
     </div>
   </div>
-  <footer>
-    <p>&copy; 2025 Jaxon Maverick. All Rights Reserved.</p>
-</footer>
-</body>
 
+  <footer>
+    <p id="footer-text">&copy; 2025 Jaxon Maverick. All Rights Reserved.</p>
+  </footer>
+</body>
 </html>

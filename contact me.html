@@ -9,8 +9,6 @@
 </head>
 
 <body>
-    <!-- Language Switcher Bar -->
-
     <!-- Video Background -->
     <video id="videoBackground" autoplay muted loop>
         <source src="d1cc3d9fa074a1f6c12c82eabfbe02d4.mp4" type="video/mp4">
@@ -19,19 +17,19 @@
 
     <!-- Navigation Menu -->
     <nav>
-        <a id="Home" href="index.html"><strong>Home</strong></a>
-        <a id="About me"href="About me.html"><strong>About Me</strong></a>
-        <a id="Contact me"href="contact me.html"><strong>Contact</strong></a>
-        
-    <div class="language-switcher">Language:
-        <select id="languageSelect" onchange="changeLanguage()">
-            <option value="en">English</option>
-            <option value="zh">Mandarin Chinese</option>
-            <option value="es">Spanish</option>
-            <option value="ta">Tamil</option>
-            <option value="ar">Arabic</option>
-        </select>
-    </div>
+        <a id="home-link" href="index.html"><strong>Home</strong></a>
+        <a id="about-link" href="About me.html"><strong>About Me</strong></a>
+        <a id="contact-link" href="contact me.html"><strong>Contact</strong></a>
+
+        <div class="language-switcher">Language:
+            <select id="languageSelect" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="zh">Mandarin Chinese</option>
+                <option value="es">Spanish</option>
+                <option value="ta">Tamil</option>
+                <option value="ar">Arabic</option>
+            </select>
+        </div>
     </nav>
 
     <!-- Contact Section -->
@@ -70,7 +68,10 @@
                 "github-text": "GitHub",
                 "instagram-text": "Instagram",
                 "footer-text": "&copy; 2025 Jaxon Maverick. All Rights Reserved.",
-                "contact-title": "Contact"
+                "contact-title": "Contact",
+                "home-link": "Home",
+                "about-link": "About Me",
+                "contact-link": "Contact"
             },
             "zh": {
                 "contact-description": "如果您想与我联系，可以通过我的社交媒体平台或电子邮件与我联系。我始终欢迎新的机会和合作！",
@@ -78,7 +79,10 @@
                 "github-text": "GitHub",
                 "instagram-text": "Instagram",
                 "footer-text": "&copy; 2025 贾克逊·马弗里克。保留所有权利。",
-                "contact-title": "联系"
+                "contact-title": "联系",
+                "home-link": "主页",
+                "about-link": "关于我",
+                "contact-link": "联系方式"
             },
             "es": {
                 "contact-description": "Si desea ponerse en contacto conmigo, no dude en ponerse en contacto a través de mis plataformas de redes sociales o por correo electrónico. ¡Siempre estoy abierto a nuevas oportunidades y colaboraciones!",
@@ -86,7 +90,10 @@
                 "github-text": "GitHub",
                 "instagram-text": "Instagram",
                 "footer-text": "&copy; 2025 Jaxon Maverick. Todos los derechos reservados.",
-                "contact-title": "Contacto"
+                "contact-title": "Contacto",
+                "home-link": "Inicio",
+                "about-link": "Sobre mí",
+                "contact-link": "Contacto"
             },
             "ta": {
                 "contact-description": "நான் தொடர்பு கொள்ள விரும்பினால், எனது சமூக ஊடக தளங்கள் அல்லது மின்னஞ்சல் வழியாக எதையும் தொடர்புகொள்க. நான் எப்போதும் புதிய வாய்ப்புகளுக்கும் கூட்டாண்மைகளுக்கும் திறந்த மனதுடன் இருக்கின்றேன்!",
@@ -94,7 +101,10 @@
                 "github-text": "GitHub",
                 "instagram-text": "Instagram",
                 "footer-text": "&copy; 2025 Jaxon Maverick. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டுள்ளன.",
-                "contact-title": "தொடர்பு"
+                "contact-title": "தொடர்பு",
+                "home-link": "முகப்பு",
+                "about-link": "என்னைப் பற்றி",
+                "contact-link": "தொடர்பு"
             },
             "ar": {
                 "contact-description": "إذا كنت ترغب في التواصل معي، فلا تتردد في الوصول من خلال منصات وسائل التواصل الاجتماعي الخاصة بي أو عبر البريد الإلكتروني. أنا دائمًا منفتح على الفرص الجديدة والتعاون!",
@@ -102,7 +112,10 @@
                 "github-text": "جيت هاب",
                 "instagram-text": "إنستجرام",
                 "footer-text": "&copy; 2025 جاكسون مايفريك. جميع الحقوق محفوظة.",
-                "contact-title": "اتصل"
+                "contact-title": "اتصل",
+                "home-link": "الصفحة الرئيسية",
+                "about-link": "عنّي",
+                "contact-link": "اتصل"
             }
         };
 
@@ -117,6 +130,9 @@
             document.getElementById('instagram-text').innerText = translations[language]["instagram-text"];
             document.getElementById('footer-text').innerHTML = translations[language]["footer-text"];
             document.getElementById('contact').querySelector('h2').innerText = translations[language]["contact-title"];
+            document.getElementById('home-link').innerText = translations[language]["home-link"];
+            document.getElementById('about-link').innerText = translations[language]["about-link"];
+            document.getElementById('contact-link').innerText = translations[language]["contact-link"];
         }
     </script>
 </body>
