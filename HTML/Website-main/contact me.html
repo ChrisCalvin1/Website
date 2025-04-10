@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Jaxon Maverick</title>
+    <link rel="stylesheet" href="Contact styles.css">
+</head>
+
+<body>
+    <!-- Video Background -->
+    <video id="videoBackground" autoplay muted loop>
+        <source src="d1cc3d9fa074a1f6c12c82eabfbe02d4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a id="home-link" href="index.html"><strong>Home</strong></a>
+        <a id="about-link" href="About me.html"><strong>About Me</strong></a>
+        <a id="service-link" href="services.html"><strong>Services</strong></a>
+        <a id="contact-link" href="contact me.html"><strong>Contact Me</strong></a>
+  
+        <div class="language-switcher">Language:
+            <select id="languageSelect" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="zh">Mandarin Chinese</option>
+                <option value="es">Spanish</option>
+                <option value="ta">Tamil</option>
+                <option value="ar">Arabic</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->    
+    <section class="contact-box" id="contact">
+        <h2><strong>Contact</strong></h2>
+        <p id="contact-description">If you'd like to get in touch with me, feel free to reach out through my social media platforms or by email. I'm always open to new opportunities and collaborations!</p>
+    </section>
+    
+
+    
+
+    <!-- Social Icons -->
+    <div class="social-icons-container">
+        <a href="https://www.facebook.com/yourprofile" class="social-icon" target="_blank">
+            <img src="15707884.png" alt="Facebook" class="social-icon-image">
+            <span id="facebook-text">Facebook</span>
+        </a>
+        <a href="https://github.com/ChrisCalvin1" class="social-icon" target="_blank">
+            <img src="github-6980894_1280.webp" alt="GitHub" class="social-icon-image">
+            <span id="github-text">GitHub</span>
+        </a>
+        <a href="https://www.instagram.com/krxtz_clvyn/" class="social-icon" target="_blank">
+            <img src="insta .png" alt="Instagram" class="social-icon-image">
+            <span id="instagram-text">Instagram</span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p id="footer-text">&copy; 2025 Jaxon Maverick. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Language Translations
+        const translations = {
+            "en": {
+                "contact-description": "If you'd like to get in touch with me, feel free to reach out through my social media platforms or by email. I'm always open to new opportunities and collaborations!",
+                "facebook-text": "Facebook",
+                "github-text": "GitHub",
+                "instagram-text": "Instagram",
+                "footer-text": "&copy; 2025 Jaxon Maverick. All Rights Reserved.",
+                "contact-title": "Contact",
+                "home-link": "Home",
+                "about-link": "About Me",
+                "contact-link": "Contact"
+            },
+            "zh": {
+                "contact-description": "如果您想与我联系，可以通过我的社交媒体平台或电子邮件与我联系。我始终欢迎新的机会和合作！",
+                "facebook-text": "Facebook",
+                "github-text": "GitHub",
+                "instagram-text": "Instagram",
+                "footer-text": "&copy; 2025 贾克逊·马弗里克。保留所有权利。",
+                "contact-title": "联系",
+                "home-link": "主页",
+                "about-link": "关于我",
+                "contact-link": "联系方式"
+            },
+            "es": {
+                "contact-description": "Si desea ponerse en contacto conmigo, no dude en ponerse en contacto a través de mis plataformas de redes sociales o por correo electrónico. ¡Siempre estoy abierto a nuevas oportunidades y colaboraciones!",
+                "facebook-text": "Facebook",
+                "github-text": "GitHub",
+                "instagram-text": "Instagram",
+                "footer-text": "&copy; 2025 Jaxon Maverick. Todos los derechos reservados.",
+                "contact-title": "Contacto",
+                "home-link": "Inicio",
+                "about-link": "Sobre mí",
+                "contact-link": "Contacto"
+            },
+            "ta": {
+                "contact-description": "நான் தொடர்பு கொள்ள விரும்பினால், எனது சமூக ஊடக தளங்கள் அல்லது மின்னஞ்சல் வழியாக எதையும் தொடர்புகொள்க. நான் எப்போதும் புதிய வாய்ப்புகளுக்கும் கூட்டாண்மைகளுக்கும் திறந்த மனதுடன் இருக்கின்றேன்!",
+                "facebook-text": "Facebook",
+                "github-text": "GitHub",
+                "instagram-text": "Instagram",
+                "footer-text": "&copy; 2025 Jaxon Maverick. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டுள்ளன.",
+                "contact-title": "தொடர்பு",
+                "home-link": "முகப்பு",
+                "about-link": "என்னைப் பற்றி",
+                "contact-link": "தொடர்பு"
+            },
+            "ar": {
+                "contact-description": "إذا كنت ترغب في التواصل معي، فلا تتردد في الوصول من خلال منصات وسائل التواصل الاجتماعي الخاصة بي أو عبر البريد الإلكتروني. أنا دائمًا منفتح على الفرص الجديدة والتعاون!",
+                "facebook-text": "فيسبوك",
+                "github-text": "جيت هاب",
+                "instagram-text": "إنستجرام",
+                "footer-text": "&copy; 2025 جاكسون مايفريك. جميع الحقوق محفوظة.",
+                "contact-title": "اتصل",
+                "home-link": "الصفحة الرئيسية",
+                "about-link": "عنّي",
+                "contact-link": "اتصل"
+            }
+        };
+
+        // Function to change language
+        function changeLanguage() {
+            const language = document.getElementById('languageSelect').value;
+
+            // Update text content based on selected language
+            document.getElementById('contact-description').innerText = translations[language]["contact-description"];
+            document.getElementById('facebook-text').innerText = translations[language]["facebook-text"];
+            document.getElementById('github-text').innerText = translations[language]["github-text"];
+            document.getElementById('instagram-text').innerText = translations[language]["instagram-text"];
+            document.getElementById('footer-text').innerHTML = translations[language]["footer-text"];
+            document.getElementById('contact').querySelector('h2').innerText = translations[language]["contact-title"];
+            document.getElementById('home-link').innerText = translations[language]["home-link"];
+            document.getElementById('about-link').innerText = translations[language]["about-link"];
+            document.getElementById('contact-link').innerText = translations[language]["contact-link"];
+        }
+    </script>
+</body>
+
+</html>

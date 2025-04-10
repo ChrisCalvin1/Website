@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Jaxon Maverick</title>
+  <link rel="stylesheet" href="Contact styles.css" />
+</head>
+
+<body>
+  <!-- Video Background -->
+  <video id="videoBackground" autoplay muted loop>
+    <source src="d1cc3d9fa074a1f6c12c82eabfbe02d4.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <a id="home-link" href="index.html"><strong>Home</strong></a>
+    <a id="about-link" href="About me.html"><strong>About Me</strong></a>
+    <a id="service-link" href="services.html"><strong>Services</strong></a>
+    <a id="contact-link" href="contact me.html"><strong>Contact Me</strong></a>
+
+    <div class="language-switcher">Language:
+      <select id="languageSelect" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="zh">Mandarin Chinese</option>
+        <option value="es">Spanish</option>
+        <option value="ta">Tamil</option>
+        <option value="ar">Arabic</option>
+      </select>
+    </div>
+  </nav>
+
+  <!-- Service Section -->
+  <section class="service-box" id="Services">
+    <h2 id="services-title"><strong>Services</strong></h2>
+
+    <section class="website-box" id="Website Developing">
+      <h2 id="website-title"><strong>Website Developing</strong></h2>
+      <p id="website-description">I craft responsive, user-friendly, and visually stunning websites tailored to your goals...</p>
+    </section>
+
+    <section class="coding-box" id="Coding">
+      <h2 id="coding-title"><strong>Coding</strong></h2>
+      <p id="coding-description">From front-end interactions to back-end logic, I write clean, efficient code that brings functionality to life...</p>
+    </section>
+
+    <section class="game-box" id="Game Developing">
+      <h2 id="game-title"><strong>Game Developing</strong></h2>
+      <p id="game-description">I design and develop interactive games with compelling gameplay, smooth performance, and immersive experiences...</p>
+    </section>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p id="footer-text">&copy; 2025 Jaxon Maverick. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const translations = {
+      "en": {
+        "services-title": "Services",
+        "website-title": "Website Developing",
+        "website-description": "I craft responsive, user-friendly, and visually stunning websites tailored to your goals...",
+        "coding-title": "Coding",
+        "coding-description": "From front-end interactions to back-end logic, I write clean, efficient code that brings functionality to life...",
+        "game-title": "Game Developing",
+        "game-description": "I design and develop interactive games with compelling gameplay, smooth performance, and immersive experiences...",
+        "footer-text": "&copy; 2025 Jaxon Maverick. All Rights Reserved.",
+        "home-link": "Home",
+        "about-link": "About Me",
+        "service-link": "Services",
+        "contact-link": "Contact Me"
+      },
+      "zh": {
+        "services-title": "服务",
+        "website-title": "网站开发",
+        "website-description": "我设计响应式、用户友好且视觉惊艳的网站，满足您的目标...",
+        "coding-title": "编码",
+        "coding-description": "从前端交互到后端逻辑，我编写高效、清晰的代码来实现功能...",
+        "game-title": "游戏开发",
+        "game-description": "我开发具有吸引力的互动游戏，具有流畅性能和沉浸体验...",
+        "footer-text": "&copy; 2025 贾克逊·马弗里克。保留所有权利。",
+        "home-link": "主页",
+        "about-link": "关于我",
+        "service-link": "服务",
+        "contact-link": "联系我"
+      },
+      "es": {
+        "services-title": "Servicios",
+        "website-title": "Desarrollo Web",
+        "website-description": "Creo sitios web receptivos, fáciles de usar y visualmente atractivos adaptados a tus objetivos...",
+        "coding-title": "Programación",
+        "coding-description": "Desde la interacción front-end hasta la lógica del back-end, escribo código limpio y eficiente...",
+        "game-title": "Desarrollo de Juegos",
+        "game-description": "Diseño y desarrollo juegos interactivos con una jugabilidad atractiva y experiencias inmersivas...",
+        "footer-text": "&copy; 2025 Jaxon Maverick. Todos los derechos reservados.",
+        "home-link": "Inicio",
+        "about-link": "Sobre mí",
+        "service-link": "Servicios",
+        "contact-link": "Contáctame"
+      },
+      "ta": {
+        "services-title": "சேவைகள்",
+        "website-title": "வலைத்தள மேம்பாடு",
+        "website-description": "நான் உங்கள் குறிக்கோள்களுக்கேற்ப பயனர் நட்பு மற்றும் அழகான வலைத்தளங்களை உருவாக்குகிறேன்...",
+        "coding-title": "குறியீடு எழுதுதல்",
+        "coding-description": "முன்நிலை மற்றும் பின்னணி செயல்பாடுகளுக்கு சீரான குறியீடுகளை எழுதுகிறேன்...",
+        "game-title": "விளையாட்டு மேம்பாடு",
+        "game-description": "மிகவும் ஈர்க்கக்கூடிய மற்றும் நுணுக்கமான விளையாட்டுகளை உருவாக்குகிறேன்...",
+        "footer-text": "&copy; 2025 ஜாக்ஸன் மேவரிக். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டுள்ளன.",
+        "home-link": "முகப்பு",
+        "about-link": "என்னைப் பற்றி",
+        "service-link": "சேவைகள்",
+        "contact-link": "தொடர்பு"
+      },
+      "ar": {
+        "services-title": "الخدمات",
+        "website-title": "تطوير المواقع",
+        "website-description": "أقوم بإنشاء مواقع ويب متجاوبة وسهلة الاستخدام وجذابة بصريًا تتماشى مع أهدافك...",
+        "coding-title": "البرمجة",
+        "coding-description": "من الواجهة الأمامية إلى المنطق الخلفي، أكتب كودًا نظيفًا وفعالًا يجلب الوظائف إلى الحياة...",
+        "game-title": "تطوير الألعاب",
+        "game-description": "أصمم وأطور ألعابًا تفاعلية بأداء سلس وتجربة ممتعة وغامرة...",
+        "footer-text": "&copy; 2025 جاكسون مايفريك. جميع الحقوق محفوظة.",
+        "home-link": "الرئيسية",
+        "about-link": "من أنا",
+        "service-link": "الخدمات",
+        "contact-link": "تواصل معي"
+      }
+    };
+
+    function changeLanguage() {
+      const language = document.getElementById('languageSelect').value;
+
+      // Top menu + footer
+      document.getElementById('home-link').innerText = translations[language]["home-link"];
+      document.getElementById('about-link').innerText = translations[language]["about-link"];
+      document.getElementById('service-link').innerText = translations[language]["service-link"];
+      document.getElementById('contact-link').innerText = translations[language]["contact-link"];
+      document.getElementById('footer-text').innerHTML = translations[language]["footer-text"];
+
+      // Services
+      document.getElementById('services-title').innerText = translations[language]["services-title"];
+      document.getElementById('website-title').innerText = translations[language]["website-title"];
+      document.getElementById('website-description').innerText = translations[language]["website-description"];
+      document.getElementById('coding-title').innerText = translations[language]["coding-title"];
+      document.getElementById('coding-description').innerText = translations[language]["coding-description"];
+      document.getElementById('game-title').innerText = translations[language]["game-title"];
+      document.getElementById('game-description').innerText = translations[language]["game-description"];
+    }
+  </script>
+</body>
+
+</html>

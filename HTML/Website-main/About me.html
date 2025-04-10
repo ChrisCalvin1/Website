@@ -1,0 +1,271 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="About styles.css" />
+  <title>About Myself</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    video#videoBackground {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      filter: brightness(0.5);
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffe7;
+    }
+
+    .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .two-column-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .box {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      flex: 1 1 45%;
+      transition: transform 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+    }
+
+    .image-container img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .scrollable-paragraph p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    #read-more-btn {
+      margin-top: 1rem;
+      padding: 0.5rem 1.2rem;
+      font-size: 1rem;
+      border: none;
+      background-color: #00ffe7;
+      color: #000;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #read-more-btn:hover {
+      background-color: #00ccb8;
+    }
+
+    @media (max-width: 768px) {
+      .two-column-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script>
+    function toggleText() {
+      const moreText = document.getElementById("more-text");
+      const btn = document.getElementById("read-more-btn");
+
+      if (moreText.style.display === "none") {
+        moreText.style.display = "inline";
+        btn.textContent = translations[document.getElementById("languageSelect").value].readLess;
+      } else {
+        moreText.style.display = "none";
+        btn.textContent = translations[document.getElementById("languageSelect").value].readMore;
+      }
+    }
+
+    window.onload = () => {
+      document.getElementById("more-text").style.display = "none";
+    };
+
+    const translations = {
+      en: {
+        navHome: "Home",
+        navAbout: "About Me",
+        navContact: "Contact",
+        heading: "About <span class='highlight'>Me</span>",
+        name: "Jaxon Maverick",
+        bioPart1: "I’m Jaxon Maverick, a 17-year-old fitness and coding enthusiast from Colombo, Sri Lanka...",
+        moreText: "I’ve been learning Python, JavaScript, and HTML/CSS...",
+        readMore: "Read More",
+        readLess: "Read Less",
+        footer: "&copy; 2025 Jaxon Maverick. All Rights Reserved."
+      },
+      zh: {
+        navHome: "主页",
+        navAbout: "关于我",
+        navContact: "联系我",
+        heading: "关于<span class='highlight'>我</span>",
+        name: "贾克森·马弗里克",
+        bioPart1: "我叫贾克森·马弗里克，来自斯里兰卡科伦坡，是一名17岁的健身和编程爱好者...",
+        moreText: "我正在学习Python、JavaScript和HTML/CSS...",
+        readMore: "阅读更多",
+        readLess: "收起",
+        footer: "&copy; 2025 贾克森·马弗里克。保留所有权利。"
+      },
+      es: {
+        navHome: "Inicio",
+        navAbout: "Sobre mí",
+        navContact: "Contacto",
+        heading: "Sobre <span class='highlight'>mí</span>",
+        name: "Jaxon Maverick",
+        bioPart1: "Soy Jaxon Maverick, un entusiasta del fitness y la programación de 17 años...",
+        moreText: "He estado aprendiendo Python, JavaScript y HTML/CSS...",
+        readMore: "Leer más",
+        readLess: "Leer menos",
+        footer: "&copy; 2025 Jaxon Maverick. Todos los derechos reservados."
+      },
+      ta: {
+        navHome: "முகப்பு",
+        navAbout: "என்னை பற்றி",
+        navContact: "தொடர்பு கொள்ள",
+        heading: "<span class='highlight'>என்னை</span> பற்றி",
+        name: "ஜாக்சன் மேவரிக்",
+        bioPart1: "நான் ஜாக்சன் மேவரிக். இலங்கையின் கொழும்பில் இருந்து வந்த...",
+        moreText: "நான் Python, JavaScript மற்றும் HTML/CSS கற்றுக்கொண்டு வருகிறேன்...",
+        readMore: "மேலும் படிக்க",
+        readLess: "குறைக்க",
+        footer: "&copy; 2025 ஜாக்சன் மேவரிக். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
+      },
+      ar: {
+        navHome: "الرئيسية",
+        navAbout: "عنّي",
+        navContact: "اتصل بي",
+        heading: "عن <span class='highlight'>نفسي</span>",
+        name: "جاكسون مافريك",
+        bioPart1: "أنا جاكسون مافريك، شاب يبلغ من العمر 17 عامًا من كولومبو...",
+        moreText: "أتعلم حاليًا Python وJavaScript وHTML/CSS...",
+        readMore: "اقرأ المزيد",
+        readLess: "اقرأ أقل",
+        footer: "&copy; 2025 جاكسون مافريك. جميع الحقوق محفوظة."
+      }
+    };
+
+    function changeLanguage() {
+      const lang = document.getElementById("languageSelect").value;
+      const t = translations[lang];
+
+      document.getElementById("nav-home").textContent = t.navHome;
+      document.getElementById("nav-about").textContent = t.navAbout;
+      document.getElementById("nav-contact").textContent = t.navContact;
+
+      document.getElementById("about-heading").innerHTML = t.heading;
+      document.getElementById("name").textContent = t.name;
+      document.getElementById("bio-part1").textContent = t.bioPart1;
+      document.getElementById("more-text").innerHTML = "<br><br>" + t.moreText;
+
+      const btn = document.getElementById("read-more-btn");
+      btn.textContent = document.getElementById("more-text").style.display === "none" ? t.readMore : t.readLess;
+
+      document.getElementById("footer-text").innerHTML = t.footer;
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Background Video -->
+  <video id="videoBackground" autoplay muted loop>
+    <source src="d1cc3d9fa074a1f6c12c82eabfbe02d4.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+
+  <nav>
+    <a id="home-link" href="index.html"><strong>Home</strong></a>
+    <a id="about-link" href="About me.html"><strong>About Me</strong></a>
+    <a id="service-link" href="services.html"><strong>Services</strong></a>
+    <a id="contact-link" href="contact me.html"><strong>Contact Me</strong></a>
+
+    <div class="language-switcher">Language:
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="zh">Mandarin Chinese</option>
+            <option value="es">Spanish</option>
+            <option value="ta">Tamil</option>
+            <option value="ar">Arabic</option>
+        </select>
+    </div>
+</nav>
+
+  <div class="hero-content">
+    <h1><span id="about-heading">About <span class="highlight">Me</span></span></h1>
+  </div>
+
+  <div class="content">
+    <div class="two-column-container">
+      <div class="box scrollable-paragraph">
+        <h2 id="name"><strong>Jaxon Maverick</strong></h2>
+        <p>
+          <span id="bio-part1">
+            I’m Jaxon Maverick, a 17-year-old fitness and coding enthusiast from Colombo, Sri Lanka. My passion for weightlifting and sports has shaped who I am. Recently, I also discovered the world of coding, which excites me because of its blend of logic and creativity.
+          </span>
+          <span id="more-text">
+            <br><br>
+            I’ve been learning Python, JavaScript, and HTML/CSS. I enjoy how a few lines of code can create something powerful — from websites to games. Coding feels like an art form, just like fitness does to me.
+          </span>
+        </p>
+        <button id="read-more-btn" onclick="toggleText()">Read More</button>
+      </div>
+      <div class="box image-container">
+        <img src="magicstudio-art.jpg" alt="Jaxon Maverick" />
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p id="footer-text">&copy; 2025 Jaxon Maverick. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
